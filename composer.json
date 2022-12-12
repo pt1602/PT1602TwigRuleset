@@ -1,0 +1,28 @@
+{
+    "name": "pt1602/pt1602twig-ruleset",
+    "description": "A custom twigcs ruleset.",
+    "keywords": [
+        "twig",
+        "ruleset",
+        "twigcs"
+    ],
+    "version": "0.0.1",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "PT1602\\PT1602TwigRuleset\\": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "Philipp Tuchardt",
+            "email": "post@pt1602.de",
+            "homepage": "https://www.pt1602.de/"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "friendsoftwig/twigcs": "^6.0"
+    }
+}
