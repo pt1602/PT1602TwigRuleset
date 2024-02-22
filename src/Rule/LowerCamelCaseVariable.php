@@ -23,8 +23,8 @@ class LowerCamelCaseVariable extends AbstractRule implements RuleInterface
         while (!$tokens->isEOF()) {
             $token = $tokens->getCurrent();
 
-            if (Token::NAME_TYPE === $token->getType() && $this->isNotLowerCamelCase($token->getValue())) {
-                if (Token::WHITESPACE_TYPE === $tokens->look(Lexer::PREVIOUS_TOKEN)->getType() && 'set' === $tokens->look(-2)->getValue()) {
+            if ($token->getType() === Token::NAME_TYPE && $this->isNotLowerCamelCase($token->getValue())) {
+                if ($tokens->look(Lexer::PREVIOUS_TOKEN)->getType() === Token::WHITESPACE_TYPE && $tokens->look(-2)->getValue() === 'set') {
                     $violations[] = $this->createViolation(
                         $tokens->getSourceContext()->getPath(),
                         $token->getLine(),
