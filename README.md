@@ -8,7 +8,13 @@
 
 # PT1602TwigRuleset
 
-This is a custom ruleset for [TwigCs](https://github.com/friendsoftwig/twigcs).
+This is a custom ruleset for [TwigCs](https://github.com/friendsoftwig/twigcs) which contains
+the [LowerCamelCaseVariable](https://github.com/Rareloop/twigcs-ruleset/blob/master/src/Rule/LowerCamelCaseVariable.php)
+from [Rareloop TwigCS Ruleset](https://github.com/Rareloop/twigcs-ruleset) and the following default checks:
+
+* ForbiddenFunctions
+* RegEngineRule
+* TrailingSpace
 
 ---
 

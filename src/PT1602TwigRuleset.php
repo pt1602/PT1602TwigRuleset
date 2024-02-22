@@ -6,9 +6,10 @@ namespace PT1602\PT1602TwigRuleset;
 
 use FriendsOfTwig\Twigcs\RegEngine\RulesetBuilder;
 use FriendsOfTwig\Twigcs\RegEngine\RulesetConfigurator;
+use FriendsOfTwig\Twigcs\Rule;
 use FriendsOfTwig\Twigcs\Ruleset\RulesetInterface;
 use FriendsOfTwig\Twigcs\Validator\Violation;
-use FriendsOfTwig\Twigcs\Rule;
+use PT1602\PT1602TwigRuleset\Rule\LowerCamelCaseVariable;
 
 class PT1602TwigRuleset implements RulesetInterface
 {
@@ -29,6 +30,7 @@ class PT1602TwigRuleset implements RulesetInterface
             new Rule\ForbiddenFunctions(Violation::SEVERITY_ERROR, ['dump']),
             new Rule\RegEngineRule(Violation::SEVERITY_ERROR, $builder->build()),
             new Rule\TrailingSpace(Violation::SEVERITY_ERROR),
+            new LowerCamelCaseVariable(Violation::SEVERITY_ERROR),
         ];
     }
 }
