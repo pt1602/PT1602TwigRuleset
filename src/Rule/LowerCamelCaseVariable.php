@@ -13,10 +13,7 @@ use FriendsOfTwig\Twigcs\TwigPort\TokenStream;
 
 class LowerCamelCaseVariable extends AbstractRule implements RuleInterface
 {
-    /**
-     * @throws SyntaxError
-     */
-    public function check(TokenStream $tokens): array
+    public function check(TokenStream $tokens)
     {
         $violations = [];
 
@@ -28,7 +25,7 @@ class LowerCamelCaseVariable extends AbstractRule implements RuleInterface
                     $violations[] = $this->createViolation(
                         $tokens->getSourceContext()->getPath(),
                         $token->getLine(),
-                        $token->columnno,
+                        $token->getColumn(),
                         sprintf('The "%s" variable should be in lowerCamelCase.', $token->getValue())
                     );
                 }
